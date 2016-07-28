@@ -23,6 +23,53 @@ void printtnstr()
 	cout << "WELCOME TO KANDY'S TIC TAC TOE" << "\n";
 	cout << "The Grid shows you the position number of each blank space,\n indicate the position number where you want to place your mark during your turn\n";
 }
+void check(int poss)
+{
+	cout << "\n CHECK\n";
+	
+		if (box[poss--] == 'x')
+		{
+			cout << "\n poss   " << box[poss];
+			cout << "\n poss--   " << box[poss--];
+			cout << "\n poss++   " << box[poss++];
+			if (box[poss] == 'x'&&box[poss--] == 'x'&&box[poss++] == 'x')
+			{
+				cout << "\nWINNER";
+				exit(0);
+			}
+			
+		}
+		poss++;
+		cout << "POOOOOOOOOOO\t" << poss << "   " << box[poss];
+		if(box[poss + 3] == 'x'&&box[poss + 6] == 'x')
+		{
+		
+			cout << "winner";
+			exit(0);
+		
+		}
+		if (box[poss - 3] == 'x'&&box[poss - 6] == 'x')
+		{
+
+			cout << "winner";
+			exit(0);
+
+		}
+		if (box[poss + 3] == 'x'&&box[poss -3] == 'x')
+		{
+
+			cout << "winner";
+			exit(0);
+
+		}
+	
+	if (box[poss++])
+	{
+		cout << "or this";
+		if(box[poss++]=='x')
+		cout << box[poss];
+	}
+}
 void enterval()
 {
 	int pos,play=1;
@@ -42,6 +89,7 @@ void enterval()
 				box[pos] = 'x';
 				play = 2;
 				printbox();
+				check(pos);
 			}
 			
 		}
