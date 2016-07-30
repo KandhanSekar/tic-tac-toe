@@ -29,10 +29,11 @@ void check(int poss)
 	
 		if (box[poss--] == 'x')
 		{
-			cout << "\n poss   " << box[poss];
-			cout << "\n poss--   " << box[poss--];
-			cout << "\n poss++   " << box[poss++];
-			if (box[poss] == 'x'&&box[poss--] == 'x'&&box[poss++] == 'x')
+			cout << "\n poss   " <<poss<<"  " << box[poss];
+			cout << "\n poss--   " <<poss-- << "  " << box[--poss];
+			cout << "\n poss++   " <<poss++ << "  " << box[++poss];
+			cout << "LLLLL"<<poss;
+			if (box[poss] == 'x'&&box[--poss] == 'x'&&box[++poss] == 'x')
 			{
 				cout << "\nWINNER";
 				exit(0);
