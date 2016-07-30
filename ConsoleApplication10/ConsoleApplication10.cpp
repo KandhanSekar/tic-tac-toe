@@ -27,19 +27,47 @@ void check(int poss)
 {
 	cout << "\n CHECK\n";
 	
-		if (box[poss--] == 'x')
+	if (box[poss] == 'x')
+	{
+		if (box[poss + 1] == 'x')
 		{
-			cout << "\n poss   " <<poss<<"  " << box[poss];
-			cout << "\n poss--   " <<poss-- << "  " << box[--poss];
-			cout << "\n poss++   " <<poss++ << "  " << box[++poss];
-			cout << "LLLLL"<<poss;
-			if (box[poss] == 'x'&&box[--poss] == 'x'&&box[++poss] == 'x')
+			if (box[poss - 1] == 'x' )
 			{
-				cout << "\nWINNER";
-				exit(0);
+				if (poss % 2 == 0)
+				{
+					cout << "WINNER";
+					exit(0);
+				}
 			}
-			
+			else if (box[poss + 2] == 'x')
+			{
+				if ((poss + 1) % 2 == 0)
+				{
+					cout << "WINNER";
+					exit(0);
+				}
+			}
 		}
+		else if (box[poss - 1] == 'x')
+		{
+			if (box[poss + 1] == 'x'  )
+			{
+				if (poss % 2 == 0)
+				{
+					cout << "WINNER";
+					exit(0);
+				}
+			}
+			else if (box[poss - 2] == 'x')
+			{
+				if ((poss - 1) % 2 == 0)
+				{
+					cout << "WINNER";
+					exit(0);
+				}
+			}
+		}
+	}
 		poss++;
 		cout << "POOOOOOOOOOO\t" << poss << "   " << box[poss];
 		if(box[poss + 3] == 'x'&&box[poss + 6] == 'x')
