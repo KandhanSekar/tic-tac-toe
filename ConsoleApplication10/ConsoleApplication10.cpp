@@ -5,6 +5,7 @@
 #include<iostream>
 using namespace std;
 char box[] = {'0','1','2','3','4','5','6','7','8','9'};
+int play = 1;
 void printbox()
 {
 	int i = 1;
@@ -25,32 +26,49 @@ void printtnstr()
 }
 void check(int poss)
 {
-	cout << "\n CHECK\n";
-	
-	if (box[poss] == 'x')
+	char opt;
+	if (play == 2)
 	{
-		if (box[poss + 1] == 'x')
+		opt = 'x';
+	}
+	else if(play==1)
+	{
+		opt = 'o';
+	}
+
+	cout << "here";
+	cout << "\n CHECK\n";
+	cout << box[poss] << opt;
+	if (box[poss] == opt)
+	{
+		cout << "loop1";
+		if (box[poss + 1] == opt)
 		{
-			if (box[poss - 1] == 'x' )
+			cout << "loop2";
+			if (box[poss - 1] == opt )
 			{
+				cout << "loop3";
 				if (poss % 2 == 0)
 				{
+					cout << "loop4";
 					cout << "WINNER";
 					exit(0);
 				}
 			}
-			else if (box[poss + 2] == 'x')
+			else if (box[poss + 2] == opt)
 			{
+				cout << "loop5";
 				if ((poss + 1) % 2 == 0)
 				{
+					cout << "loop6";
 					cout << "WINNER";
 					exit(0);
 				}
 			}
 		}
-		else if (box[poss - 1] == 'x')
+		else if (box[poss - 1] == opt)
 		{
-			if (box[poss + 1] == 'x'  )
+			if (box[poss + 1] == opt  )
 			{
 				if (poss % 2 == 0)
 				{
@@ -58,7 +76,7 @@ void check(int poss)
 					exit(0);
 				}
 			}
-			else if (box[poss - 2] == 'x')
+			else if (box[poss - 2] == opt)
 			{
 				if ((poss - 1) % 2 == 0)
 				{
@@ -70,21 +88,21 @@ void check(int poss)
 	}
 		poss++;
 		cout << "POOOOOOOOOOO\t" << poss << "   " << box[poss];
-		if(box[poss + 3] == 'x'&&box[poss + 6] == 'x')
+		if(box[poss + 3] == opt&&box[poss + 6] == opt)
 		{
 		
 			cout << "winner";
 			exit(0);
 		
 		}
-		if (box[poss - 3] == 'x'&&box[poss - 6] == 'x')
+		if (box[poss - 3] == opt&&box[poss - 6] == opt)
 		{
 
 			cout << "winner";
 			exit(0);
 
 		}
-		if (box[poss + 3] == 'x'&&box[poss -3] == 'x')
+		if (box[poss + 3] == opt&&box[poss -3] == opt)
 		{
 
 			cout << "winner";
@@ -95,13 +113,13 @@ void check(int poss)
 	if (box[poss++])
 	{
 		cout << "or this";
-		if(box[poss++]=='x')
+		if(box[poss++]==opt)
 		cout << box[poss];
 	}
 }
 void enterval()
 {
-	int pos,play=1;
+	int pos;
 	while (true)
 	{
 		if (play == 1)
@@ -136,6 +154,7 @@ void enterval()
 				box[pos] = 'o';
 				play = 1;
 				printbox();
+				check(pos);
 			}
 
 		}
