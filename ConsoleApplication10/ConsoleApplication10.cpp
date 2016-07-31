@@ -1,10 +1,10 @@
 // ConsoleApplication10.cpp : Defines the entry point for the console application.
-//
+//All rights to use/comment/suggest given to the viewer !! i want to learn how to become better
 
 #include "stdafx.h"
 #include<iostream>
 using namespace std;
-char box[] = {'0','1','2','3','4','5','6','7','8','9'};
+char box[] = {'0','1','2','3','4','5','6','7','8','9'};// The grid!
 int play = 1;
 void printbox()
 {
@@ -24,12 +24,12 @@ void printtnstr()
 	cout << "WELCOME TO KANDY'S TIC TAC TOE" << "\n";
 	cout << "The Grid shows you the position number of each blank space,\n indicate the position number where you want to place your mark during your turn\n";
 }
-void check(int poss)
+void check(int poss)		// checks one step before and after!!
 {
 	char opt;
 	if (play == 2)
 	{
-		opt = 'x';///
+		opt = 'x';
 	}
 	else if(play==1)
 	{
@@ -48,7 +48,7 @@ void check(int poss)
 			if (box[poss - 1] == opt )
 			{
 				cout << "loop3";
-				if (poss % 2 == 0)
+				if (poss % 2 == 0)	//checks within same row or not!
 				{
 					cout << "loop4";
 					cout << "WINNER";
@@ -163,9 +163,9 @@ void enterval()
 }
 int main()
 {
-	printtnstr();
-	printbox();
-	enterval();
+	printtnstr();				//Welcome message !! explain rules
+	printbox();					//print the grid!
+	enterval();					// user turns auto exit if player wins
     return 0;
 }
 
