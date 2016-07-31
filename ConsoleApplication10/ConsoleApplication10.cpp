@@ -29,7 +29,7 @@ void check(int poss)
 	char opt;
 	if (play == 2)
 	{
-		opt = 'x';
+		opt = 'x';///
 	}
 	else if(play==1)
 	{
