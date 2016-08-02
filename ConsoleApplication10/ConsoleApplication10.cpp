@@ -134,39 +134,71 @@ void check(int poss)		// checks one step before and after!!
 			{
 				if ((poss - 1) % 2 == 0)
 				{
-					cout << "WE have eeWINNER";
+					cout << "WE have a WINNER";
+					if (opt == 'x')
+					{
+						cout << "\n The winner is Player 1";
+					}
+					else
+					{
+						cout << "\n The winner is Player 2";
+					}
 					exit(0);
 				}
 			}
 		}
 	}
-		poss++;
-		cout << "POOOOOOOOOOO\t" << poss << "   " << box[poss];
+		//poss++;
+		//cout << "POOOOOOOOOOO\t" << poss << "   " << box[poss];
 		if(box[poss + 3] == opt&&box[poss + 6] == opt)
 		{
 		
-			cout << "winner";
+			cout << "We have a WINNER!!!!";
+			if (opt == 'x')
+			{
+				cout << "\n The winner is Player 1";
+			}
+			else
+			{
+				cout << "\n The winner is Player 2";
+			}
 			exit(0);
 		
 		}
 		if (box[poss - 3] == opt&&box[poss - 6] == opt)
 		{
 
-			cout << "winner";
+			cout << "We Have a WINNER!!!";
+			if (opt == 'x')
+			{
+				cout << "\n The winner is Player 1";
+			}
+			else
+			{
+				cout << "\n The winner is Player 2";
+			}
 			exit(0);
 
 		}
 		if (box[poss + 3] == opt&&box[poss -3] == opt)
 		{
 
-			cout << "winner";
+			cout << "We Have a WINNER!!!";
+			if (opt == 'x')
+			{
+				cout << "\n The winner is Player 1";
+			}
+			else
+			{
+				cout << "\n The winner is Player 2";
+			}
 			exit(0);
 
 		}
 	
 	if (box[poss++])
 	{
-		cout << "or this";
+		//cout << "or this";
 		if(box[poss++]==opt)
 		cout << box[poss];
 	}
@@ -221,6 +253,7 @@ int main()
 	printtnstr();				//Welcome message !! explain rules
 	printbox();					//print the grid!
 	enterval();					// user turns auto exit if player wins
-    return 0;
+	return 0;
+
 }
 
