@@ -134,7 +134,7 @@ void check(int poss)		// checks one step before and after!!
 			{
 				if ((poss - 1) % 2 == 0)
 				{
-					cout << "WE have WINNER";
+					cout << "WE have eeWINNER";
 					exit(0);
 				}
 			}
