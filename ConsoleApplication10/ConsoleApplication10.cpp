@@ -24,6 +24,36 @@ void printtnstr()
 	cout << "WELCOME TO KANDY'S TIC TAC TOE" << "\n";
 	cout << "The Grid shows you the position number of each blank space,\n indicate the position number where you want to place your mark during your turn\n";
 }
+
+void crossface(char opt)
+{
+	if (box[1] == opt&&box[5] == opt&&box[9] == opt)
+	{
+		cout << "We have a WINNER!!!!";
+		if (opt == 'x')
+		{
+			cout << "\n The winner is Player 1";
+		}
+		else
+		{
+			cout << "\n The winner is Player 2";
+		}
+		exit(0);
+	}
+	else if (box[3] == opt&&box[5] && box[7] == opt)
+	{
+		cout << "We have a WINNER!!!!";
+		if (opt == 'x')
+		{
+			cout << "\n The winner is Player 1";
+		}
+		else
+		{
+			cout << "\n The winner is Player 2";
+		}
+		exit(0);
+	}
+}
 void check(int poss)		// checks one step before and after!!
 {
 	char opt;
@@ -36,32 +66,48 @@ void check(int poss)		// checks one step before and after!!
 		opt = 'o';
 	}
 
-	cout << "here";
-	cout << "\n CHECK\n";
-	cout << box[poss] << opt;
+	//cout << "here";
+	//cout << "\n CHECK\n";
+	//cout << box[poss] << opt;
 	if (box[poss] == opt)
 	{
-		cout << "loop1";
+		//cout << "loop1";
 		if (box[poss + 1] == opt)
 		{
-			cout << "loop2";
+			//cout << "loop2";
 			if (box[poss - 1] == opt )
 			{
-				cout << "loop3";
+				//cout << "loop3";
 				if (poss % 2 == 0)	//checks within same row or not!
 				{
-					cout << "loop4";
-					cout << "WINNER";
+					//cout << "loop4";
+					cout << "We Have a WINNER!!!!!";
+					if (opt == 'x')
+					{
+						cout << "\n The winner is Player 1";
+					}
+					else
+					{
+						cout << "\n The winner is Player 2";
+					}
 					exit(0);
 				}
 			}
 			else if (box[poss + 2] == opt)
 			{
-				cout << "loop5";
+				//cout << "loop5";
 				if ((poss + 1) % 2 == 0)
 				{
-					cout << "loop6";
-					cout << "WINNER";
+					//cout << "loop6";
+					cout << "We have a WINNER!!!!!";
+					if (opt == 'x')
+					{
+						cout << "\n The winner is Player 1";
+					}
+					else
+					{
+						cout << "\n The winner is Player 2";
+					}
 					exit(0);
 				}
 			}
@@ -72,7 +118,15 @@ void check(int poss)		// checks one step before and after!!
 			{
 				if (poss % 2 == 0)
 				{
-					cout << "WINNER";
+					cout << "We Have a WINNER!!!!";
+					if (opt == 'x')
+					{
+						cout << "\n The winner is Player 1";
+					}
+					else
+					{
+						cout << "\n The winner is Player 2";
+					}
 					exit(0);
 				}
 			}
@@ -80,7 +134,7 @@ void check(int poss)		// checks one step before and after!!
 			{
 				if ((poss - 1) % 2 == 0)
 				{
-					cout << "WINNER";
+					cout << "WE have WINNER";
 					exit(0);
 				}
 			}
@@ -116,6 +170,7 @@ void check(int poss)		// checks one step before and after!!
 		if(box[poss++]==opt)
 		cout << box[poss];
 	}
+	crossface(opt);
 }
 void enterval()
 {
