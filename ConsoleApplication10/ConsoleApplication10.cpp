@@ -6,6 +6,11 @@
 using namespace std;
 char box[] = {'0','1','2','3','4','5','6','7','8','9'};// The grid!
 int play = 1;
+
+//NEW WINNER FUNCTION
+
+
+//
 void printbox()
 {
 	int i = 1;
